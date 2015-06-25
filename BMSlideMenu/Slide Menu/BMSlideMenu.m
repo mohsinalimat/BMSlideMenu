@@ -210,12 +210,12 @@ typedef NS_ENUM(NSUInteger, BMSliderType)
             CGPoint center = centerOrigin;
             
             if ((sliderType == BMSliderTypeLeft && self.leftViewController)
-                || self.rightMenuVisible)
+                || (self.rightMenuVisible && deltaX > 0))
             {
                 center.x = MIN(center.x + deltaX, CGRectGetWidth(self.view.bounds));
             }
             else if ((sliderType == BMSliderTypeRight && self.rightViewController)
-                     || self.leftMenuVisible)
+                     || (self.leftMenuVisible && deltaX < 0))
             {
                 center.x = MAX(center.x + deltaX, 0);
             }
