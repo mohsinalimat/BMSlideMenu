@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Slide Menu-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="BMSlideMenu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="centerViewStoryboardID" value="rootVC"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="leftViewStoryboardID" value="leftMenuVC"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rightViewStoryboardID" value="rightMenuVC"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="308"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="aaL-2a-QLx">
+            <objects>
+                <viewController storyboardIdentifier="rootVC" id="NuY-Cf-1n1" customClass="BMRootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wy4-tH-z7q"/>
+                        <viewControllerLayoutGuide type="bottom" id="23B-8l-y6V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MgF-3d-Xbe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dialogs controller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GON-Ju-aen">
+                                <rect key="frame" x="93" y="273" width="134" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPM-lM-VZl" userLabel="Left Menu">
+                                <rect key="frame" x="16" y="28" width="21" height="22"/>
+                                <state key="normal" image="LeftMenuButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showLeftMenu:" destination="NuY-Cf-1n1" eventType="touchUpInside" id="iZh-Wt-NQZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCW-st-EAY" userLabel="Right Menu">
+                                <rect key="frame" x="283" y="28" width="21" height="22"/>
+                                <state key="normal" image="RightMenuButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showRightMenu:" destination="NuY-Cf-1n1" eventType="touchUpInside" id="3jZ-P6-UNE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="DPM-lM-VZl" firstAttribute="top" secondItem="wy4-tH-z7q" secondAttribute="bottom" constant="8" id="3qX-ep-SjD"/>
+                            <constraint firstItem="DPM-lM-VZl" firstAttribute="leading" secondItem="MgF-3d-Xbe" secondAttribute="leadingMargin" id="Fjg-IG-zMR"/>
+                            <constraint firstAttribute="centerY" secondItem="GON-Ju-aen" secondAttribute="centerY" id="VXl-1F-rMr"/>
+                            <constraint firstItem="VCW-st-EAY" firstAttribute="trailing" secondItem="MgF-3d-Xbe" secondAttribute="trailingMargin" id="p7W-Gl-v4m"/>
+                            <constraint firstAttribute="centerX" secondItem="GON-Ju-aen" secondAttribute="centerX" id="udF-fx-NSJ"/>
+                            <constraint firstItem="VCW-st-EAY" firstAttribute="top" secondItem="wy4-tH-z7q" secondAttribute="bottom" constant="8" id="vuM-0L-YDF"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BKB-nJ-FUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="717" y="308"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="O2M-D6-bj7">
+            <objects>
+                <viewController storyboardIdentifier="secondVC" id="bfG-yj-TLA" customClass="BMSecondViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VKT-lg-dKd"/>
+                        <viewControllerLayoutGuide type="bottom" id="wUB-YX-aT0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6k8-2t-CCt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Controller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T81-gI-yV8">
+                                <rect key="frame" x="97" y="273" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8K-Qa-MpZ" userLabel="Left Menu">
+                                <rect key="frame" x="16" y="28" width="21" height="22"/>
+                                <state key="normal" image="LeftMenuButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showLeftMenu:" destination="bfG-yj-TLA" eventType="touchUpInside" id="cIb-Ag-3SU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8R-uO-nEc" userLabel="Right Menu">
+                                <rect key="frame" x="283" y="28" width="21" height="22"/>
+                                <state key="normal" image="RightMenuButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showRightMenu:" destination="bfG-yj-TLA" eventType="touchUpInside" id="4IP-x7-ZmJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.47450980390000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="T81-gI-yV8" secondAttribute="centerY" id="Apu-mD-zUG"/>
+                            <constraint firstItem="g8K-Qa-MpZ" firstAttribute="leading" secondItem="6k8-2t-CCt" secondAttribute="leadingMargin" id="Rcj-V3-KcM"/>
+                            <constraint firstAttribute="centerX" secondItem="T81-gI-yV8" secondAttribute="centerX" id="kvA-2e-gbH"/>
+                            <constraint firstItem="z8R-uO-nEc" firstAttribute="top" secondItem="VKT-lg-dKd" secondAttribute="bottom" constant="8" id="pk0-az-MF7"/>
+                            <constraint firstItem="g8K-Qa-MpZ" firstAttribute="top" secondItem="VKT-lg-dKd" secondAttribute="bottom" constant="8" id="qVr-ce-3nm"/>
+                            <constraint firstItem="z8R-uO-nEc" firstAttribute="trailing" secondItem="6k8-2t-CCt" secondAttribute="trailingMargin" id="rtz-Fn-UDW"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l1q-EC-Aky" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086" y="308"/>
+        </scene>
+        <!--Left View Controller-->
+        <scene sceneID="CFV-4X-Qcx">
+            <objects>
+                <viewController storyboardIdentifier="leftMenuVC" id="s0a-vn-ggN" customClass="BMLeftViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SGp-yh-lKa"/>
+                        <viewControllerLayoutGuide type="bottom" id="BHt-r0-aY4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Hw-f6-qpW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGn-iW-HjO">
+                                <rect key="frame" x="16" y="239" width="52" height="30"/>
+                                <state key="normal" title="Dialogs">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showVC:" destination="s0a-vn-ggN" eventType="touchUpInside" id="Da9-Nk-FYB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8x-U2-me3">
+                                <rect key="frame" x="16" y="299" width="41" height="30"/>
+                                <state key="normal" title="Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showVC:" destination="s0a-vn-ggN" eventType="touchUpInside" id="LGf-q1-CT7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.20392156859999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="sGn-iW-HjO" secondAttribute="centerX" id="0gX-u8-o5v"/>
+                            <constraint firstItem="sGn-iW-HjO" firstAttribute="leading" secondItem="4Hw-f6-qpW" secondAttribute="leadingMargin" id="Cut-1a-YKN"/>
+                            <constraint firstAttribute="centerX" secondItem="J8x-U2-me3" secondAttribute="centerX" id="GVm-yP-1Om"/>
+                            <constraint firstItem="J8x-U2-me3" firstAttribute="leading" secondItem="4Hw-f6-qpW" secondAttribute="leadingMargin" id="LBq-RF-Qxq"/>
+                            <constraint firstAttribute="centerY" secondItem="sGn-iW-HjO" secondAttribute="centerY" constant="30" id="cdr-eD-BIC"/>
+                            <constraint firstAttribute="centerY" secondItem="J8x-U2-me3" secondAttribute="centerY" constant="-30" id="tXe-Di-rqC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0gX-u8-o5v"/>
+                                <exclude reference="GVm-yP-1Om"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7SN-Ja-w2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="935"/>
+        </scene>
+        <!--Right View Controller-->
+        <scene sceneID="OQk-Dp-4CH">
+            <objects>
+                <viewController storyboardIdentifier="rightMenuVC" id="7eu-DT-JtA" customClass="BMRightViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aEr-sd-qf9"/>
+                        <viewControllerLayoutGuide type="bottom" id="hrs-qg-5bZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Xb-3f-DcN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.086274509799999996" green="0.41176470590000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9PZ-T6-iG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="661" y="935"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LeftMenuButton" width="21" height="13"/>
+        <image name="RightMenuButton" width="21" height="13"/>
+    </resources>
+</document>
